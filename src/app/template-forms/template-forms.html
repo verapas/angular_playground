@@ -1,0 +1,82 @@
+<div class="page">
+  <div class="page-header">
+    <span class="page-icon">📝</span>
+    <div>
+      <h2>Template-driven Forms</h2>
+      <p>Formulare werden direkt im Template mit <code>ngModel</code> definiert.</p>
+    </div>
+  </div>
+
+  <div class="demo-card">
+    <div class="code-badge">FormsModule · ngModel · NgForm</div>
+
+    <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)" novalidate>
+
+      <div class="field">
+        <label for="name">Name</label>
+        <input
+          id="name"
+          name="name"
+          type="text"
+          [(ngModel)]="name"
+          required
+          minlength="2"
+          #nameRef="ngModel"
+          placeholder="z.B. Max Mustermann"
+        />
+        @if (nameRef.invalid && nameRef.touched) {
+          <span class="error">
+            @if (nameRef.errors?.['required']) { Name ist erforderlich. }
+            @if (nameRef.errors?.['minlength']) { Mindestens 2 Zeichen. }
+          </span>
+        }
+      </div>
+
+      <div class="field">
+        <label for="email">E-Mail</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          [(ngModel)]="email"
+          required
+          email
+          #emailRef="ngModel"
+          placeholder="z.B. max@example.com"
+        />
+        @if (emailRef.invalid && emailRef.touched) {
+          <span class="error">
+            @if (emailRef.errors?.['required']) { E-Mail ist erforderlich. }
+            @if (emailRef.errors?.['email']) { Bitte eine gültige E-Mail eingeben. }
+          </span>
+        }
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="btn-primary" [disabled]="myForm.invalid">
+          Absenden
+        </button>
+        <button type="button" class="btn-ghost" (click)="reset(myForm)">
+          Zurücksetzen
+        </button>
+      </div>
+    </form>
+
+    @if (result()) {
+      <div class="result">
+        <strong>✅ Formular abgesendet!</strong>
+        <pre>{{ result() | json }}</pre>
+      </div>
+    }
+  </div>
+
+  <div class="info-box">
+    <strong>Wie funktioniert es?</strong>
+    <ul>
+      <li><code>[(ngModel)]</code> — Two-way Binding zwischen Input und Variable</li>
+      <li><code>#myForm="ngForm"</code> — Template-Referenz auf das Formular-Objekt</li>
+      <li><code>#nameRef="ngModel"</code> — Zugriff auf den Validierungsstatus des Feldes</li>
+      <li>Validierung via HTML-Attribute: <code>required</code>, <code>minlength</code>, <code>email</code></li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,72 @@
+<div class="page">
+  <div class="page-header">
+    <span class="page-icon">⚡</span>
+    <div>
+      <h2>Reactive Forms</h2>
+      <p>Formulare werden im TypeScript-Code definiert — typsicher und testbar.</p>
+    </div>
+  </div>
+
+  <div class="demo-card">
+    <div class="code-badge">ReactiveFormsModule · FormGroup · FormControl · Validators</div>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+
+      <div class="field">
+        <label for="name">Name</label>
+        <input
+          id="name"
+          type="text"
+          formControlName="name"
+          placeholder="z.B. Max Mustermann"
+          [class.invalid]="name.invalid && name.touched"
+        />
+        @if (name.invalid && name.touched) {
+          <span class="error">
+            @if (name.errors?.['required']) { Name ist erforderlich. }
+            @if (name.errors?.['minlength']) { Mindestens 2 Zeichen. }
+          </span>
+        }
+      </div>
+
+      <div class="field">
+        <label for="email">E-Mail</label>
+        <input
+          id="email"
+          type="email"
+          formControlName="email"
+          placeholder="z.B. max@example.com"
+          [class.invalid]="email.invalid && email.touched"
+        />
+        @if (email.invalid && email.touched) {
+          <span class="error">
+            @if (email.errors?.['required']) { E-Mail ist erforderlich. }
+            @if (email.errors?.['email']) { Bitte eine gültige E-Mail eingeben. }
+          </span>
+        }
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="btn-primary">Absenden</button>
+        <button type="button" class="btn-ghost" (click)="reset()">Zurücksetzen</button>
+      </div>
+    </form>
+
+    @if (result()) {
+      <div class="result">
+        <strong>✅ Formular abgesendet!</strong>
+        <pre>{{ result() | json }}</pre>
+      </div>
+    }
+  </div>
+
+  <div class="info-box">
+    <strong>Wie funktioniert es?</strong>
+    <ul>
+      <li><code>new FormGroup(&#123;...&#125;)</code> — Gruppe aus mehreren FormControls</li>
+      <li><code>new FormControl('', [Validators.required])</code> — einzelnes Feld mit Validatoren</li>
+      <li><code>[formGroup]="form"</code> — bindet das Template an die FormGroup</li>
+      <li><code>formControlName="name"</code> — verknüpft ein Input mit einem FormControl</li>
+    </ul>
+  </div>
+</div>

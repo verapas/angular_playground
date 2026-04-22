@@ -1,0 +1,30 @@
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <span class="logo-icon">🚀</span>
+      <span class="logo-text">Angular<br><strong>Playground</strong></span>
+    </div>
+
+    <nav class="nav">
+      @for (item of navItems; track item.route) {
+        <a
+          class="nav-item"
+          [routerLink]="item.route"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: item.route === '/' }"
+        >
+          <span class="nav-icon">{{ item.icon }}</span>
+          <span>{{ item.label }}</span>
+        </a>
+      }
+    </nav>
+
+    <div class="sidebar-footer">
+      <span>Angular 21 · Signal Forms</span>
+    </div>
+  </aside>
+
+  <main class="content">
+    <router-outlet />
+  </main>
+</div>

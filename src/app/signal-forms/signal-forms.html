@@ -1,0 +1,62 @@
+<div class="page">
+  <div class="page-header">
+    <span class="page-icon">🔮</span>
+    <div>
+      <h2>Signal Forms <span class="badge">Angular 21 · Experimental</span></h2>
+      <p>Die neue signal-basierte Form-API — typsicher, reaktiv, ohne Zone.js.</p>
+    </div>
+  </div>
+
+  <div class="demo-card">
+    <div class="code-badge">@angular/forms/signals · form() · Field · submit()</div>
+
+    <form (submit)="$event.preventDefault(); onSubmit()">
+
+      <div class="field">
+        <label>Name</label>
+        <input
+          type="text"
+          [field]="myForm.name"
+          placeholder="z.B. Max Mustermann"
+        />
+        @if (myForm.name().invalid() && myForm.email().touched()) {
+          <span class="error">{{ myForm.name().errors()[0]?.message }}</span>
+        }
+      </div>
+
+      <div class="field">
+        <label>E-Mail</label>
+        <input
+          type="email"
+          [field]="myForm.email"
+          placeholder="z.B. max@example.com"
+        />
+        @if (myForm.email().invalid() && myForm.email().touched()) {
+          <span class="error">{{ myForm.email().errors()[0]?.message }}</span>
+        }
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="btn-primary">Absenden</button>
+        <button type="button" class="btn-ghost" (click)="reset()">Zurücksetzen</button>
+      </div>
+    </form>
+
+    @if (result()) {
+      <div class="result">
+        <strong>✅ Formular abgesendet!</strong>
+        <pre>{{ result() | json }}</pre>
+      </div>
+    }
+  </div>
+
+  <div class="info-box">
+    <strong>Wie funktioniert es?</strong>
+    <ul>
+      <li><code>form(signal(&#123; name: '' &#125;), (path) => &#123; required(path.name) &#125;)</code> — erstellt das Signal-Formular</li>
+      <li><code>[field]="myForm.name"</code> — bindet ein Feld an ein Input (kein ngModel nötig!)</li>
+      <li><code>myForm.name().invalid()</code> — Zugriff auf den Validierungsstatus als Signal</li>
+      <li><code>submit(myForm, callback)</code> — validiert und ruft callback nur bei gültigem Formular auf</li>
+    </ul>
+  </div>
+</div>

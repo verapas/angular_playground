@@ -1,0 +1,21 @@
+<div class="hero">
+  <div class="hero-badge">✨ Angular 21</div>
+  <h1>Willkommen im<br><span class="gradient-text">Angular Playground</span></h1>
+  <p class="subtitle">
+    Ein interaktiver Spielplatz zum Lernen und Ausprobieren moderner Angular-Konzepte.
+    Klicke auf eine Karte oder nutze die Navigation du dumme sau
+  </p>
+</div>
+
+<div class="cards-grid">
+  @for (card of cards; track card.route) {
+    <a class="card" [routerLink]="card.route" [style.--card-accent]="card.color">
+      <div class="card-icon">{{ card.icon }}</div>
+      <div class="card-body">
+        <h3>{{ card.title }}</h3>
+        <p>{{ card.description }}</p>
+      </div>
+      <span class="card-tag">{{ card.tag }}</span>
+    </a>
+  }
+</div>
