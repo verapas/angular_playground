@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, ChangeDetectionStrategy } from '@angular/core';
 import { JsonPipe } from '@angular/common';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
@@ -6,6 +6,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
   selector: 'app-reactive-forms',
   imports: [ReactiveFormsModule, JsonPipe],
   templateUrl: './reactive-forms.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './reactive-forms.scss',
 })
 export class ReactiveForms {

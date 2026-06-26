@@ -1,0 +1,28 @@
+<div class="page">
+  <div class="page-header">
+    <span class="page-icon">📃</span>
+    <div>
+      <h2>Task-list <span class="badge">Klassische Liste</span></h2>
+      <p>Das ist eine Übungs-Komponente um eine Liste zu erstellen und zu verwalten</p>
+    </div>
+  </div>
+
+
+  <ul class="task-list">
+  @for (task of tasks(); track task.id) {
+    <li class="task-item">
+      <input
+        type="checkbox"
+        [checked]="task.done"
+        (change)="toggle(task.id)" />
+      <div class="task-text">
+        <span class="task-title">{{ task.title }}</span>
+        <span class="task-description">{{ task.description }}</span>
+      </div>
+    </li>
+  }
+  </ul>
+</div>
+
+
+

@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, ChangeDetectionStrategy } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import {JsonPipe} from '@angular/common';
 
@@ -6,6 +6,7 @@ import {JsonPipe} from '@angular/common';
   selector: 'app-template-forms',
   imports: [FormsModule, JsonPipe],
   templateUrl: './template-forms.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './template-forms.scss',
 })
 export class TemplateForms {

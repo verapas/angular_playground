@@ -1,11 +1,12 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, ChangeDetectionStrategy } from '@angular/core';
 import { JsonPipe } from '@angular/common';
-import { Field, form, minLength, required, submit } from '@angular/forms/signals';
+import { FormField, form, minLength, required, submit } from '@angular/forms/signals';
 
 @Component({
   selector: 'app-signal-forms',
-  imports: [Field, JsonPipe],
+  imports: [FormField, JsonPipe],
   templateUrl: './signal-forms.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './signal-forms.scss',
 })
 export class SignalForms {

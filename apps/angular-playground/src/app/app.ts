@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 interface NavItem {
@@ -11,6 +11,7 @@ interface NavItem {
   selector: 'app-root',
   imports: [RouterOutlet, RouterLink, RouterLinkActive],
   templateUrl: './app.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './app.scss',
 })
 export class App {
@@ -19,5 +20,6 @@ export class App {
     { label: 'Template Forms', icon: '📝', route: '/template-forms' },
     { label: 'Reactive Forms', icon: '⚡', route: '/reactive-forms' },
     { label: 'Signal Forms', icon: '🔮', route: '/signal-forms' },
+    { label: 'Task List', icon: '📋', route: '/task-list' },
   ];
 }

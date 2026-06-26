@@ -20,4 +20,9 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./signal-forms/signal-forms').then((m) => m.SignalForms),
   },
+  {
+    path: 'task-list',
+    loadComponent: () =>
+      import('./task-list/task-list').then((m) => m.TaskList),
+  },
 ];

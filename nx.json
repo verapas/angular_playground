@@ -26,6 +26,9 @@
     },
     "@nx/angular:library": {
       "directory": "libs"
+    },
+    "@nx/angular:component": {
+      "style": "css"
     }
   },
   "namedInputs": {

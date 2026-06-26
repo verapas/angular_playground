@@ -16,7 +16,7 @@
         <label>Name</label>
         <input
           type="text"
-          [field]="myForm.name"
+          [formField]="myForm.name"
           placeholder="z.B. Max Mustermann"
         />
         @if (myForm.name().invalid() && myForm.email().touched()) {
@@ -28,7 +28,7 @@
         <label>E-Mail</label>
         <input
           type="email"
-          [field]="myForm.email"
+          [formField]="myForm.email"
           placeholder="z.B. max@example.com"
         />
         @if (myForm.email().invalid() && myForm.email().touched()) {

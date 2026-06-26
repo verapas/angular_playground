@@ -1,0 +1,29 @@
+@use '../shared-page' as *;
+
+:host {
+  display: block;
+
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+
+  .task-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+
+  .task-title {
+    font-weight: bold;
+    padding-right: 18px;
+  }
+
+}
