@@ -1,0 +1,21 @@
+:host {
+  display: block;
+}
+
+.assignment-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+
+  &__header {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+    background: var(--accent-light);
+  }
+
+  &__body {
+    padding: 20px;
+  }
+}

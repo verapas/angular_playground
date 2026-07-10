@@ -51,5 +51,13 @@ export class Dashboard {
       route: '/task-list',
       tag: 'Angular 21',
     },
+    {
+      title: 'Simple Assignments',
+      description: 'Kleine Übungen in wiederverwendbaren Assignment-Cards mit Content-Projection.',
+      icon: '🧩',
+      color: '#ec4899',
+      route: '/simple-assignments',
+      tag: 'Content Projection',
+    },
   ];
 }

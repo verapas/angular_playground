@@ -21,5 +21,6 @@ export class App {
     { label: 'Reactive Forms', icon: '⚡', route: '/reactive-forms' },
     { label: 'Signal Forms', icon: '🔮', route: '/signal-forms' },
     { label: 'Task List', icon: '📋', route: '/task-list' },
+    { label: 'Simple Assignments', icon: '🧩', route: '/simple-assignments' },
   ];
 }

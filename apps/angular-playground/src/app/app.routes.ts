@@ -25,4 +25,11 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./task-list/task-list').then((m) => m.TaskList),
   },
+  {
+    path: 'simple-assignments',
+    loadComponent: () =>
+      import('./simple-assignments/simple-assignments').then(
+        (m) => m.SimpleAssignments
+      ),
+  },
 ];

@@ -1,4 +1,23 @@
 @use '@angular/material' as mat;
+
+// Ein zentraler Font-Stack für die ganze App (body + alle Material-Komponenten)
+$app-font: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+html {
+  @include mat.theme((
+    color: (
+      theme-type: light,
+      primary: mat.$violet-palette,
+      tertiary: mat.$violet-palette,
+    ),
+    typography: (
+      plain-family: $app-font,
+      brand-family: $app-font,
+    ),
+    density: 0,
+  ));
+}
+
 @include mat.core();   // <- Basis-Styles
 @import "tailwindcss";
 
@@ -21,7 +40,7 @@
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: $app-font;
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;

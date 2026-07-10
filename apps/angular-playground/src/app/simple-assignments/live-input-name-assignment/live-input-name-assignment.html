@@ -1,0 +1,17 @@
+<form>
+  <label for="name">Name:</label>
+  <input class="border border-black rounded m-2 p-1" id="name" type="text" name="name" [(ngModel)]="name"/>
+
+
+</form>
+
+
+@if (name() === '') {
+  <div>
+    Bitte gib einen Namen ein.
+  </div>
+} @else {
+  <div>
+    Zugewiesener Name: {{name()}}
+  </div>
+}

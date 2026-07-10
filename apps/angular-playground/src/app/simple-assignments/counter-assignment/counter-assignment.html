@@ -1,0 +1,10 @@
+<div class="flex flex-row gap-2" >
+
+  <button matButton="elevated" (click)="decrement()"> - </button>
+  <div class="border rounded-lg border-gray-300 px-4 py-2 w-fit ">{{ count() }}</div>
+  <button matButton="elevated" (click)="increment()"> + </button>
+
+  <button matButton="filled" [color]="" (click)="reset()"> reset </button>
+
+</div>
+
