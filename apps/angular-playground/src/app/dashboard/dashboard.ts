@@ -52,6 +52,14 @@ export class Dashboard {
       tag: 'Angular 21',
     },
     {
+      title: 'Task Manager',
+      description: 'Tasks aus dem Spring-Boot-Backend laden und als erledigt markieren.',
+      icon: '✅',
+      color: '#0ea5e9',
+      route: '/task-manager',
+      tag: 'Backend · HttpClient',
+    },
+    {
       title: 'Simple Assignments',
       description: 'Kleine Übungen in wiederverwendbaren Assignment-Cards mit Content-Projection.',
       icon: '🧩',

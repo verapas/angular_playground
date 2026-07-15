@@ -26,6 +26,11 @@ export const routes: Routes = [
       import('./task-list/task-list').then((m) => m.TaskList),
   },
   {
+    path: 'task-manager',
+    loadComponent: () =>
+      import('./task-manager/task-manager').then((m) => m.TaskManager),
+  },
+  {
     path: 'simple-assignments',
     loadComponent: () =>
       import('./simple-assignments/simple-assignments').then(

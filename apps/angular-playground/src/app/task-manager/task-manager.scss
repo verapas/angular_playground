@@ -1,0 +1,67 @@
+@use '../shared-page' as *;
+
+:host {
+  display: block;
+}
+
+.task-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.task-title {
+  font-weight: 600;
+  flex: 1;
+}
+
+/*
+  TODO (Aufgabe): Stil fuer erledigte Tasks (durchgestrichen).
+  Diese Klasse im Template per [class.done]="task.done" am Titel aktivieren.
+
+  .done {
+    text-decoration: line-through;
+    color: var(--text-muted);
+  }
+*/
+
+.task-status {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: #f1f5f9;
+
+  &.status-done {
+    color: #166534;
+    background: #dcfce7;
+  }
+}
+
+.task-empty {
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 8px 0;
+}
+
+.error-box {
+  padding: 12px 16px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-size: 13px;
+}

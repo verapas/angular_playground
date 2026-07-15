@@ -1,0 +1,41 @@
+<div class="page">
+  <div class="page-header">
+    <span class="page-icon">✅</span>
+    <div>
+      <h2>Task Manager <span class="badge">Assignment</span></h2>
+      <p>Tasks werden aus dem Spring-Boot-Backend geladen. Markiere einen Task als erledigt.</p>
+    </div>
+  </div>
+
+  @if (errorMessage()) {
+    <div class="error-box">{{ errorMessage() }}</div>
+  }
+
+  <ul class="task-list">
+    @for (task of tasks(); track task.id) {
+      <li class="task-item">
+        <!--
+          TODO (Aufgabe): Erledigte Tasks durchgestrichen darstellen.
+          Tipp: [class.done]="task.done" am Titel setzen und im SCSS
+                die Klasse .done mit text-decoration: line-through stylen.
+        -->
+        <span class="task-title">{{ task.title }}</span>
+
+        <span class="task-status" [class.status-done]="task.done">
+          {{ task.done ? 'Erledigt' : 'Offen' }}
+        </span>
+
+        <!--
+          TODO (Aufgabe): Button pro Task einfuegen, der completeTask(task.id) aufruft.
+          Der Button soll nur erscheinen, solange der Task noch offen ist (@if (!task.done)).
+          Beispiel:
+            @if (!task.done) {
+              <button class="btn-primary" (click)="completeTask(task.id)">Erledigt</button>
+            }
+        -->
+      </li>
+    } @empty {
+      <li class="task-empty">Keine Tasks vorhanden.</li>
+    }
+  </ul>
+</div>
