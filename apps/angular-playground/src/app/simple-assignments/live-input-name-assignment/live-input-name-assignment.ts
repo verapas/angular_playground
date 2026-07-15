@@ -12,6 +12,10 @@ import {FormsModule} from '@angular/forms';
 export class LiveInputNameAssignment {
     name = signal('');
 
+    nameCharAmount() {
+      return this.name().length;
+    }
+
 
 
 }

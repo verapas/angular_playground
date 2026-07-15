@@ -1,0 +1,42 @@
+{
+  "name": "spring-boot-playground-backend",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/spring-boot-playground-backend/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "cache": true,
+      "dependsOn": ["^build"],
+      "outputs": ["{projectRoot}/build"],
+      "options": {
+        "cwd": "apps/spring-boot-playground-backend",
+        "command": ".\\gradlew.bat build"
+      }
+    },
+    "serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/spring-boot-playground-backend",
+        "command": ".\\gradlew.bat bootRun"
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "cache": true,
+      "outputs": ["{projectRoot}/build/test-results", "{projectRoot}/build/reports/tests"],
+      "options": {
+        "cwd": "apps/spring-boot-playground-backend",
+        "command": ".\\gradlew.bat test"
+      }
+    },
+    "clean": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/spring-boot-playground-backend",
+        "command": ".\\gradlew.bat clean"
+      }
+    }
+  }
+}
