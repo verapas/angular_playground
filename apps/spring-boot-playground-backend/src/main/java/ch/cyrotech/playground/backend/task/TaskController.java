@@ -1,7 +1,6 @@
-package ch.cyrotech.playground.backend.task.controller;
+package ch.cyrotech.playground.backend.task;
 
 import ch.cyrotech.playground.backend.task.dto.TaskDto;
-import ch.cyrotech.playground.backend.task.service.TaskService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,19 +28,6 @@ public class TaskController {
         return taskService.getAllTasks();
     }
 
-    /*
-     * AUFGABE: Endpoint erstellen, der einen Task als erledigt markiert.
-     *
-     * Anforderungen:
-     *   - Reagiert auf einen Task per id (z.B. PATCH /api/tasks/{id}/complete)
-     *   - Liest die id aus dem Pfad (@PathVariable)
-     *   - Ruft taskService.markAsDone(id) auf
-     *   - Gibt den aktualisierten TaskDto zurueck
-     *
-     * Tipp - Grundgeruest:
-     *   @PatchMapping("/{id}/complete")
-     *   public TaskDto completeTask(@PathVariable Long id) {
-     *       // ...
-     *   }
-     */
+    // AUFGABE: Einen Endpoint bereitstellen, ueber den ein einzelner Task
+    // als erledigt markiert werden kann. Delegiere die Logik an den TaskService.
 }

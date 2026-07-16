@@ -26,15 +26,7 @@
   flex: 1;
 }
 
-/*
-  TODO (Aufgabe): Stil fuer erledigte Tasks (durchgestrichen).
-  Diese Klasse im Template per [class.done]="task.done" am Titel aktivieren.
-
-  .done {
-    text-decoration: line-through;
-    color: var(--text-muted);
-  }
-*/
+/* AUFGABE: Stil fuer erledigte Tasks ergaenzen (z.B. durchgestrichen, gedaempfte Farbe). */
 
 .task-status {
   font-size: 12px;

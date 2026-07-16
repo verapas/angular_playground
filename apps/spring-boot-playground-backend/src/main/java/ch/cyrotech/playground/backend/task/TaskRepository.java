@@ -1,6 +1,5 @@
-package ch.cyrotech.playground.backend.task.repository;
+package ch.cyrotech.playground.backend.task;
 
-import ch.cyrotech.playground.backend.task.entity.Task;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

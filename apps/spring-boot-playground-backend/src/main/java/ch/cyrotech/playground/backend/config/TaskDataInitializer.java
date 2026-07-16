@@ -1,7 +1,7 @@
 package ch.cyrotech.playground.backend.config;
 
-import ch.cyrotech.playground.backend.task.entity.Task;
-import ch.cyrotech.playground.backend.task.repository.TaskRepository;
+import ch.cyrotech.playground.backend.task.Task;
+import ch.cyrotech.playground.backend.task.TaskRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,10 +17,10 @@ public class TaskDataInitializer {
     CommandLineRunner seedTasks(TaskRepository taskRepository) {
         return args -> {
             if (taskRepository.count() == 0) {
-                taskRepository.save(new Task("Spring Boot Backend aufsetzen", true));
-                taskRepository.save(new Task("Task als erledigt markieren (Backend-Endpoint)", false));
-                taskRepository.save(new Task("Button im Frontend bauen", false));
-                taskRepository.save(new Task("Erledigte Tasks durchstreichen", false));
+                taskRepository.save(Task.builder().title("Spring Boot Backend aufsetzen").done(true).build());
+                taskRepository.save(Task.builder().title("Task als erledigt markieren (Backend-Endpoint)").done(false).build());
+                taskRepository.save(Task.builder().title("Button im Frontend bauen").done(false).build());
+                taskRepository.save(Task.builder().title("Erledigte Tasks durchstreichen").done(false).build());
             }
         };
     }

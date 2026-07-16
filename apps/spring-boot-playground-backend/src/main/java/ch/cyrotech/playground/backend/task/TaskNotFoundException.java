@@ -1,4 +1,4 @@
-package ch.cyrotech.playground.backend.task.exception;
+package ch.cyrotech.playground.backend.task;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

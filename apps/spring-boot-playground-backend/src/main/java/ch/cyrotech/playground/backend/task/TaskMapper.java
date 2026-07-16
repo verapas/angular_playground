@@ -1,7 +1,6 @@
-package ch.cyrotech.playground.backend.task.mapper;
+package ch.cyrotech.playground.backend.task;
 
 import ch.cyrotech.playground.backend.task.dto.TaskDto;
-import ch.cyrotech.playground.backend.task.entity.Task;
 import org.springframework.stereotype.Component;
 
 /**

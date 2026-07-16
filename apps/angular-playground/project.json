@@ -92,6 +92,13 @@
           "apps/angular-playground/src/styles.scss"
         ]
       }
+    },
+    "generate": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": ".",
+        "command": "openapi-generator-cli generate -i http://localhost:8080/v3/api-docs -g typescript-angular -o apps/angular-playground/src/app/api --additional-properties=ngVersion=21.0.0,providedInRoot=true,fileNaming=kebab-case,withInterfaces=true"
+      }
     }
   }
 }

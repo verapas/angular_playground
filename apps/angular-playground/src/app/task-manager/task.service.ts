@@ -19,14 +19,11 @@ export class TaskService {
   }
 
   /**
-   * AUFGABE: Ruft den neuen Backend-Endpoint auf, der einen Task
-   * auf done = true setzt, und gibt den aktualisierten Task zurueck.
-   *
-   * Tipp: Passend zum Backend ein PATCH auf `${this.baseUrl}/${id}/complete`.
-   *       Ein PATCH ohne Body: this.http.patch<Task>(url, {})
+   * AUFGABE: Den Backend-Endpoint aufrufen, der einen Task als erledigt
+   * markiert, und das Ergebnis als Observable<Task> zurueckgeben.
    */
   completeTask(id: number): Observable<Task> {
-    // TODO: HTTP-Aufruf implementieren und das Ergebnis (Observable<Task>) zurueckgeben.
+    // TODO: HTTP-Aufruf implementieren.
     throw new Error('TODO: completeTask() implementieren');
   }
 }

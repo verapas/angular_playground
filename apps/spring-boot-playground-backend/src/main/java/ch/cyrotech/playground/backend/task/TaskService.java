@@ -1,8 +1,6 @@
-package ch.cyrotech.playground.backend.task.service;
+package ch.cyrotech.playground.backend.task;
 
 import ch.cyrotech.playground.backend.task.dto.TaskDto;
-import ch.cyrotech.playground.backend.task.mapper.TaskMapper;
-import ch.cyrotech.playground.backend.task.repository.TaskRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -32,17 +30,12 @@ public class TaskService {
     }
 
     /**
-     * AUFGABE: Markiert den Task mit der uebergebenen id als erledigt (done = true).
-     *
-     * Vorgehen (Tipps):
-     *   1. Task per id aus dem taskRepository laden.
-     *      Bei nicht gefunden: throw new TaskNotFoundException(id)
-     *   2. task.setDone(true)
-     *   3. Task mit taskRepository.save(...) speichern
-     *   4. Gespeicherten Task via taskMapper.toDto(...) zurueckgeben
+     * AUFGABE: Den Task mit dieser id als erledigt markieren, speichern und
+     * als TaskDto zurueckgeben. Existiert kein Task mit der id, soll die API
+     * mit 404 antworten (es gibt bereits eine passende Exception im Package).
      */
     public TaskDto markAsDone(Long id) {
-        // TODO: Implementiere die Logik gemaess der Beschreibung oben.
+        // TODO: Implementiere diese Methode.
         throw new UnsupportedOperationException("TODO: markAsDone() implementieren");
     }
 }

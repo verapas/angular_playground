@@ -40,11 +40,8 @@ export class TaskManager {
   }
 
   /**
-   * AUFGABE: Markiert einen Task als erledigt.
-   *
-   * Vorgehen (Tipps):
-   *   1. this.taskService.completeTask(id) aufrufen und subscriben
-   *   2. Nach Erfolg die Liste neu laden -> this.loadTasks()
+   * AUFGABE: Den Task ueber den TaskService als erledigt markieren und
+   * danach die Ansicht aktualisieren.
    */
   protected completeTask(id: number): void {
     // TODO: completeTask implementieren.
