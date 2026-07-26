@@ -2,6 +2,7 @@ package ch.cyrotech.playground.backend.task;
 
 import ch.cyrotech.playground.backend.task.dto.TaskDto;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -28,6 +29,8 @@ public class TaskController {
         return taskService.getAllTasks();
     }
 
-    // AUFGABE: Einen Endpoint bereitstellen, ueber den ein einzelner Task
-    // als erledigt markiert werden kann. Delegiere die Logik an den TaskService.
+    @GetMapping("/{id}/done")
+    public TaskDto markAsDone(@PathVariable Long id) {
+        return taskService.markAsDone(id);
+    }
 }

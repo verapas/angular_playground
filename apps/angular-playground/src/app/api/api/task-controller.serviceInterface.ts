@@ -25,16 +25,16 @@ export interface TaskControllerServiceInterface {
     /**
      * 
      * 
-     * @endpoint get /api/tasks/{id}/complete
-     * @param id 
+     * @endpoint get /api/tasks
      */
-    completeTask(id: number, extraHttpRequestParams?: any): Observable<TaskDto>;
+    getAllTasks(extraHttpRequestParams?: any): Observable<Array<TaskDto>>;
 
     /**
      * 
      * 
-     * @endpoint get /api/tasks
+     * @endpoint get /api/tasks/{id}/done
+     * @param id 
      */
-    getAllTasks(extraHttpRequestParams?: any): Observable<Array<TaskDto>>;
+    markAsDone(id: number, extraHttpRequestParams?: any): Observable<TaskDto>;
 
 }

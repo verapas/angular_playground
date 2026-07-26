@@ -35,7 +35,9 @@ public class TaskService {
      * mit 404 antworten (es gibt bereits eine passende Exception im Package).
      */
     public TaskDto markAsDone(Long id) {
-        // TODO: Implementiere diese Methode.
-        throw new UnsupportedOperationException("TODO: markAsDone() implementieren");
+        Task task = taskRepository.findById(id)
+                .orElseThrow(() -> new TaskNotFoundException(id));
+        task.setDone(true);
+        return taskMapper.toDto(taskRepository.save(task));
     }
 }

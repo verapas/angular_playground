@@ -14,15 +14,14 @@
   <ul class="task-list">
     @for (task of tasks(); track task.id) {
       <li class="task-item">
-        <!-- AUFGABE: Erledigte Tasks sollen sich visuell abheben (z.B. durchgestrichen). -->
-        <span class="task-title">{{ task.title }}</span>
+        <span class="task-title" [class.task-done]="task.done">{{ task.title }}</span>
 
         <span class="task-status" [class.status-done]="task.done">
           {{ task.done ? 'Erledigt' : 'Offen' }}
         </span>
 
-        <!-- AUFGABE: Einen Button ergaenzen, der einen offenen Task als erledigt
-             markiert (soll completeTask(task.id) aufrufen). -->
+
+        <button matButton class="task-complete-button" (click)="completeTask(task.id)" *ngIf="!task.done">Erledigt</button>
       </li>
     } @empty {
       <li class="task-empty">Keine Tasks vorhanden.</li>

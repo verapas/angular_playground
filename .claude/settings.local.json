@@ -1,10 +1,16 @@
 {
   "permissions": {
+    "defaultMode": "acceptEdits",
     "allow": [
       "Bash(node -e ':*)",
       "WebSearch",
       "Read(//tmp/**)",
-      "Bash(break)"
+      "Bash(break)",
+      "Bash(npx nx:*)",
+      "Bash(./gradlew:*)",
+      "Bash(pnpm:*)",
+      "Bash(curl:*)",
+      "Bash(git mv:*)"
     ]
   }
 }

@@ -26,7 +26,10 @@
   flex: 1;
 }
 
-/* AUFGABE: Stil fuer erledigte Tasks ergaenzen (z.B. durchgestrichen, gedaempfte Farbe). */
+.task-done {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
 
 .task-status {
   font-size: 12px;
